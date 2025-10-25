@@ -506,6 +506,7 @@ for _i,flag in pairs(ListFlags:GetChildren()) do
 
         check:SetCallback(function(enabled)
             remotesViewing[flag.Name] = enabled
+            if flag.Name == "RemoteEvent" then  remotesViewing["UnreliableRemoteEvent"] = enabled end
             refreshLogs()
         end)
     end
